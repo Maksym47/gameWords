@@ -1,0 +1,27 @@
+let vocabulary = ['сирр', 'льох', 'їжа', 'кір', 'дуб', 'бук', 'гриб', 'кут', 'рік'];
+let letters = 'ркисуі';
+
+
+
+function finder(arr, str){
+  let resultAll = [];
+  for(let i = 0; i < arr.length; i++){
+    let resultWord = [];
+    
+    for(let j = 0; j < arr[i].length; j++){
+      if (str.includes(arr[i][j])){
+      	
+        resultWord.push(arr[i][j]);
+      }
+    }
+    if(resultWord.join('') == arr[i]){
+    	resultAll.push(resultWord.join(''));
+    }
+    
+  }
+  return resultAll;
+}
+
+let result = finder(vocabulary, letters);
+alert(result.length);
+alert(result);
