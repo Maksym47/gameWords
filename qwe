@@ -1,24 +1,27 @@
-let vocabulary = ['сирр', 'льох', 'їжа', 'кір', 'дуб', 'бук', 'гриб', 'кут', 'рік'];
+let vocabulary = ['сир', 'льох', 'їжа', 'кір', 'дуб', 'бук', 'гриб', 'кут', 'рік'];
 let letters = 'ркисуі';
 
 
 
 function finder(arr, str){
   let resultAll = [];
+  
   for(let i = 0; i < arr.length; i++){
     let resultWord = [];
+    let strCopy = str.split('');
     
     for(let j = 0; j < arr[i].length; j++){
-      if (str.includes(arr[i][j])){
-      	
+      if (strCopy.includes(arr[i][j])){
         resultWord.push(arr[i][j]);
+        strCopy[strCopy.indexOf(arr[i][j])] = null;
       }
     }
+    
     if(resultWord.join('') == arr[i]){
     	resultAll.push(resultWord.join(''));
     }
-    
   }
+  
   return resultAll;
 }
 
